@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PhishGuard – Phishing URL Detector</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>🛡️ PhishGuard</h1>
+  <p class="sub">URL paste pannunga – domain & URL features-ah analyze panni risk indicators explain pannum.</p>
+
+  <div class="card">
+    <div class="row">
+      <input id="url" type="text" placeholder="https://example.com/login" autocomplete="off" spellcheck="false">
+      <button id="go">Analyze</button>
+    </div>
+    <div class="samples">Try:
+      <button class="ghost" data-u="https://www.google.com/search?q=hello">Safe sample</button>
+      <button class="ghost" data-u="http://paypal.com.secure-login.verify-account.xyz/signin?id=1@x">Phishing sample 1</button>
+      <button class="ghost" data-u="http://192.168.45.12:8080/sbi/netbanking/update-kyc.php">Phishing sample 2</button>
+      <button class="ghost" data-u="https://bit.ly/3xAbC9">Shortener</button>
+    </div>
+  </div>
+
+  <div id="result">
+    <div class="card">
+      <div class="verdict">
+        <div class="score" id="score">0</div>
+        <div><span class="badge" id="badge"></span><div class="note" id="vtext" style="margin-top:6px"></div></div>
+      </div>
+      <div class="meter"><div id="bar"></div></div>
+      <h2>Risk indicators</h2>
+      <div id="feats"></div>
+    </div>
+    <div class="card">
+      <h2>Extracted features</h2>
+      <div class="tbl"><table id="ft"></table></div>
+    </div>
+  </div>
+
+  <p class="note">⚠️ Idhu rule-based heuristic scoring (client-side). Real-world use-ku trained ML model + threat-intel feeds (PhishTank, Google Safe Browsing) add pannanum. URL anywhere send aagaadhu – ellame browser-la mattum run aagum.</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
